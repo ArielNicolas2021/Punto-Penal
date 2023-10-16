@@ -44,11 +44,13 @@ body {
     padding: 5rem 6rem 7rem;
     text-align: center;
 }
+
 .form-box h1 {
     font-size: 3rem;
     margin-bottom: 6rem;
     color: var(--color-one);
 }
+
 .input-field {
     margin: 1.5rem 0;
     background-color: rgb(00, 00, 00,0.2);
@@ -60,6 +62,7 @@ body {
     transition: max-height 0.5s;
     overflow: hidden;
 }
+
 input {
     color: #ffffff;
     width: 100%;
@@ -68,29 +71,35 @@ input {
     outline: 0;
     padding: 1.8rem 1.5rem;
 }
+
 .input-field i {
     margin-left: 1.5rem;
     color: #ffffff;
 }
+
 .input-field .mark {
     color: red;
     margin-right: 1rem;
 }
+
 form p {
     text-align: left;
     font-size: 1.3rem;
     color:white;
 }
+
 form p a {
     text-decoration: none;
-    color: #ffffff;
+    color: var(--color-two);
 }
+
 .btn-field {
     width: 100%;
     display: flex;
     justify-content: space-between;
     margin-top: 2rem;
 }
+
 .btn-field button {
     flex-basis: 48%;
     background: var(--color-three);
@@ -102,23 +111,28 @@ form p a {
     cursor: pointer;
     transition: background 1s;
 }
+
 button.disable {
         background: #dfdede;
         color: #555;
 }
+
 .input-field .dn,
 .dn {
     display: none;
 }
+
 .volver {
     text-align: left;
     text-decoration: none;
     font-size: 1.3rem;
-    color: white;
+    color: var(--color-two);
 }
+
 .error {
     color: red;
 }
+
 .submit-btn {
     padding: 1rem;
     background-color: var(--color-one);
@@ -127,10 +141,12 @@ button.disable {
     cursor: pointer;
     margin-top: 1rem;
 }
+
 .submit-btn:hover {
     background-color: #220cae;
     transition: background-color 0.3s;
 }
+
 .input-error {
     border: 1px solid red;
 }
@@ -155,8 +171,6 @@ button.disable {
 .input-field-hora select{
     margin-left: 90px;
 }
-
-
 
 #reservarBtn{
     width: 75%;

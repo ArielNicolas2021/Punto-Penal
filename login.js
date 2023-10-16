@@ -7,7 +7,9 @@ ingresarBtn.onclick = function() {
 
     // Oculto input de 'email' y 'tel'
     document.getElementById("emailField").style.maxHeight = "0";
+    document.getElementById('emailField').style.border = 'none';
     document.getElementById("telField").style.maxHeight = "0";
+    document.getElementById('telField').style.border = 'none';
 
     // Cambio título a 'ingresar'
     document.getElementById("title").innerHTML = "Ingresar";
@@ -42,7 +44,9 @@ registrarBtn.onclick = function() {
 
     // Muestro input 'tel' y 'email'
     emailField.style.maxHeight = "6rem";
+    emailField.style.border = '1px solid #614ed9';
     telField.style.maxHeight = "6rem";
+    telField.style.border = '1px solid #614ed9';
 
     // Cambio título a 'Registrarse'
     title.innerHTML = "Registrarse";
@@ -66,6 +70,7 @@ registrarBtn.onclick = function() {
     campos['passwordLogin'] ='';
 }
 
+// Declaro variables para el formulario
 const formulario = document.getElementById("form");
 const inputs = document.querySelectorAll("#form input");
 const expresiones = {
@@ -84,6 +89,7 @@ const campos = {
     passwordLogin: ''
 }
 
+// Validacion de formulario
 const validarFormulario = (e) => {
     switch (e.target.name) {
         case "tel":
@@ -126,7 +132,7 @@ const validarFormulario = (e) => {
             }
         break;
         case 'userLogin':
-            if (e.target.value === 'Ariel') {
+            if (e.target.value === 'Ariel2023') {
                 campos['usuarioLogin'] = true;
             } else if (e.target.value === null || e.target.value === '') {
                 campos['usuarioLogin'] = '';
@@ -148,7 +154,7 @@ const validarFormulario = (e) => {
             }
         break;
         case 'passwordLogin':
-            if (e.target.value === '1234') {
+            if (e.target.value === '123456') {
                 campos['passwordLogin'] = true;
             } else if (e.target.value === '' || e.target.value === null) {
                 campos['passwordLogin'] = '';
@@ -159,6 +165,7 @@ const validarFormulario = (e) => {
     }
 };
 
+// Al soltar la tecla o salir del campo, valida formulario
 inputs.forEach((input) => {
     input.addEventListener('keyup', validarFormulario);
     input.addEventListener('blur', validarFormulario);
@@ -169,7 +176,7 @@ formulario.addEventListener('submit', (e) => {
         alert('Registro completado!');
         form.reset();
     } else if (campos.usuarioLogin && campos.passwordLogin) {
-        alert('Bienvenido!');
+        window.location.href = 'index.html'
         form.reset();
     } else if (campos.usuarioLogin === '' || campos.passwordLogin === '') {
         e.preventDefault();
