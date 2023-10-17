@@ -94,12 +94,12 @@ const validarFormulario = (e) => {
     switch (e.target.name) {
         case "tel":
             if(expresiones.telefono.test(e.target.value)) {
-                document.getElementById('telField').classList.remove('input-error');
+                document.getElementById('telField').style.border = '1px solid #614ed9';
                 document.getElementById('telMark').classList.add('dn');
                 document.getElementById('telError').classList.add('dn');
                 campos['telefono'] = true;
             } else {
-                document.getElementById('telField').classList.add('input-error');
+                document.getElementById('telField').style.border = '1px solid red';
                 document.getElementById('telMark').classList.remove('dn');
                 document.getElementById('telError').classList.remove('dn');
                 campos['telefono'] = false;
@@ -107,12 +107,12 @@ const validarFormulario = (e) => {
         break;
         case "email":
             if(expresiones.correo.test(e.target.value)) {
-                document.getElementById('emailField').classList.remove('input-error');
+                document.getElementById('emailField').style.border = '1px solid #614ed9';
                 document.getElementById('emailMark').classList.add('dn');
                 document.getElementById('emailError').classList.add('dn');
                 campos['correo'] = true;
             } else {
-                document.getElementById('emailField').classList.add('input-error');
+                document.getElementById('emailField').style.border = '1px solid red';
                 document.getElementById('emailMark').classList.remove('dn');
                 document.getElementById('emailError').classList.remove('dn');
                 campos['correo'] = false;
@@ -132,7 +132,7 @@ const validarFormulario = (e) => {
             }
         break;
         case 'userLogin':
-            if (e.target.value === 'Ariel2023') {
+            if (e.target.value === localStorage.getItem('usuario')) {
                 campos['usuarioLogin'] = true;
             } else if (e.target.value === null || e.target.value === '') {
                 campos['usuarioLogin'] = '';
@@ -154,7 +154,7 @@ const validarFormulario = (e) => {
             }
         break;
         case 'passwordLogin':
-            if (e.target.value === '123456') {
+            if (e.target.value === localStorage.getItem('contraseña')) {
                 campos['passwordLogin'] = true;
             } else if (e.target.value === '' || e.target.value === null) {
                 campos['passwordLogin'] = '';
@@ -170,10 +170,15 @@ inputs.forEach((input) => {
     input.addEventListener('keyup', validarFormulario);
     input.addEventListener('blur', validarFormulario);
 });
+
 formulario.addEventListener('submit', (e) => {
     e.preventDefault();
     if(campos.telefono && campos.correo && campos.usuario && campos.password) {
-        alert('Registro completado!');
+        alert('Registrado correctamente!')
+        localStorage.setItem('usuario', user.value);
+        localStorage.setItem('contraseña', password.value);
+        console.log(localStorage.getItem('usuario'));
+        console.log(localStorage.getItem('contraseña'));
         form.reset();
     } else if (campos.usuarioLogin && campos.passwordLogin) {
         window.location.href = 'index.html'
@@ -184,6 +189,7 @@ formulario.addEventListener('submit', (e) => {
         alert('Ingrese sus datos nuevamente.')
     }
 });
+
 ingresarBtn.addEventListener('click', () => {
 
     // Oculto validacion de campo de 'tel'
