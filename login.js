@@ -36,6 +36,8 @@ ingresarBtn.onclick = function() {
     document.getElementById('userField').id = 'userLogin';
     document.getElementById('passwordField').id = 'passwordLogin';
 
+    form.reset();
+
 
 }
 
@@ -68,6 +70,8 @@ registrarBtn.onclick = function() {
 
     campos['usuarioLogin'] = '';
     campos['passwordLogin'] ='';
+
+    form.reset();
 }
 
 // Declaro variables para el formulario

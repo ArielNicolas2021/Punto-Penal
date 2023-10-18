@@ -18,19 +18,3 @@ let error = document.getElementById("error");
 let errorEmail = document.getElementById("errorEmail");
 let errorPassword = document.getElementById("errorPassword");
 let form = document.getElementById("formulario");
-
-form.addEventListener("submit", function(evt) {
-    evt.preventDefault();
-    var emailError = "";
-    var passwordError = "";
-
-    if (email.value === null || email.value === "") {
-        emailError = "Ingresa tu email";
-    }
-    if(password.value === null || password.value === "") {
-        passwordError = "Ingresa tu contraseña";
-    }
-    errorEmail.innerHTML = emailError;
-    errorPassword.innerHTML = passwordError;
-
-})
