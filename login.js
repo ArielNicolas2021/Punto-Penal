@@ -174,19 +174,18 @@ inputs.forEach((input) => {
 formulario.addEventListener('submit', (e) => {
     e.preventDefault();
     if(campos.telefono && campos.correo && campos.usuario && campos.password) {
-        alert('Registrado correctamente!')
+        alert('Registrado correctamente!');
         localStorage.setItem('usuario', user.value);
         localStorage.setItem('contraseña', password.value);
         console.log(localStorage.getItem('usuario'));
         console.log(localStorage.getItem('contraseña'));
         form.reset();
     } else if (campos.usuarioLogin && campos.passwordLogin) {
-        window.location.href = 'index.html'
-        form.reset();
+        window.location.href = 'reserva.html';
     } else if (campos.usuarioLogin === '' || campos.passwordLogin === '') {
         e.preventDefault();
     } else {
-        alert('Ingrese sus datos nuevamente.')
+        alert('Ingrese sus datos nuevamente.');
     }
 });
 
