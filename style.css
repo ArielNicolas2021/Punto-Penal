@@ -511,6 +511,15 @@ button.disable {
     background-color: var(--color-five);
 
 }
+.clima {
+
+    text-align: center;
+    font-size: 15px;
+    color: var(--color-four);
+    padding: 0px;
+    background-color: var(--color-five);
+
+}
 
 .grid-container {
     display: grid;
