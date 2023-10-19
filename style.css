@@ -383,46 +383,40 @@ iframe {
     font-weight: 800;
 }
 
-/* RESOLUCION Tablets y celu */
-@media(min-width: 767px){
+/* Media para tablets */
+@media(min-width: 768px) and (max-width: 1023px) {
+    .navbar-container {
+        display: none;
+    }
+
+    #menu-toggler {
+        display: none;
+    }
+
+    #nav-menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        font-size: 2vw;
+    }
+
+    #nav-menu a:nth-child(3) {
+        display: inline;
+    }
+
+    #nav-menu a:hover {
+        transition: transform 0.2s ease-in;
+        transform: scale(1.05, 1.05);
+        border-bottom: 1px solid var(--color-three);
+    }
+
+}
+
+/* RESOLUCION pc */
+@media(min-width: 1024px){
 
     /* ARIEL */
-    #buttons {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        margin: 10px;
-    }
-
-    .redes-btn i {
-        color: var(--color-four);
-    }
-
-    .redes-btn i:hover {
-        transform: scale(1.05, 1.05);
-        transition: transform 0.2s ease-in;
-    }
-
-    .reserva-btn a {
-        text-decoration: none;
-        color: var(--color-four);
-        background-color: var(--color-three);
-        padding: 1rem;
-
-        border-radius: 1rem;
-        font-weight: 800;
-    }
-
-    .reserva-btn a:hover {
-        background-color: var(--color-six);
-        transition: all 0.2s ease-in;
-    }
-
-    .navbar {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-    }
 
     .navbar-container {
         display: none;
@@ -570,17 +564,26 @@ iframe {
         margin-left: 100px;
     }
 
-    .box div h2{
-        margin-top: 200px;
+    .box {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .box-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .grid{
+        grid-row: 1 / 2;
     }
 
     .box-mapa{
-        display: flex;
-        justify-content: space-between;
         text-align: center;
         font-size: 1.3em;
-        height: auto;
         padding: 30px;
+        border-top: 1px solid white;
     }
 
     .box-mapa h2{
