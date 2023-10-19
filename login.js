@@ -36,8 +36,10 @@ ingresarBtn.onclick = function() {
     document.getElementById('userField').id = 'userLogin';
     document.getElementById('passwordField').id = 'passwordLogin';
 
+    // Resetear formulario
     form.reset();
-
+    campos['telefono'] = false;
+    campos['email'] = false;
 
 }
 
