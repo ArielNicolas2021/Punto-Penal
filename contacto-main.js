@@ -5,6 +5,12 @@ function validarFormulario() {
     var telefono = document.getElementById("telefono").value;
     var tipoConsulta = document.getElementById("tipoConsulta").value;
     var consulta = document.getElementById("consulta").value;
+    var nombreApellidoPattern = /^[A-Za-z\s]+$/;
+    
+    if (!nombreApellidoPattern.test(nombre) || !nombreApellidoPattern.test(apellido)) {
+        alert("Los campos 'Nombre' y 'Apellido' no deben contener números.");
+        return false;
+    }
 
     // Realiza la validación aquí, por ejemplo, asegúrate de que los campos no estén vacíos
     if (nombre === "" || apellido === "" || correo === "" || telefono === "" || tipoConsulta === "default" || consulta === "") {
