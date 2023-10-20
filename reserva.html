@@ -8,7 +8,6 @@
     <link rel="shortcut icon" href="images/logo-puntopenal.ico">
     <link rel="stylesheet" href="login.css">
     <script src="https://kit.fontawesome.com/13b7066a14.js" crossorigin="anonymous"></script>
-    <script src="validacion-reserva.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 </head>
 
@@ -17,11 +16,11 @@
         <article class="form-box">
             <h1 id="title">Reservar</h1>
             <div>
-                <form class="input-group" id="form">
+                <form class="input-group" id="form-reserva" action="https://formspree.io/f/xwkdyezv" method="POST">
                     <!-- Nombre -->
                     <div class="input-field" id="userField">
                         <i class="fa-regular fa-user"></i>
-                        <input type="text" value="Ariel" readonly>
+                        <input type="text" name="Nombre" value="Ariel">
                         <i class="mark fa-solid fa-xmark dn" id="userMark"></i>
                     </div>
                     <p id="userError" class="error dn">El usuario solo puede contener letras, numeros, guión y guión
@@ -30,7 +29,7 @@
                     <!-- Contraseña -->
                     <div class="input-field" id="passwordField">
                         <i class="fa-regular fa-user"></i>
-                        <input type="text" value="Palazzesi" readonly>
+                        <input type="text" name="Apellido" value="Palazzesi">
                         <i class="mark fa-solid fa-xmark dn" id="passwordMark"></i>
                     </div>
                     <p id="passwordError" class="error dn">La contraseña debe ser de 4 a 12 dígitos.</p>
@@ -38,7 +37,7 @@
                     <!-- Email -->
                     <div class="input-field" id="emailField">
                         <i class="fa-regular fa-envelope"></i>
-                        <input type="text" value="ariel.palazzesi@bue.edu.ar" readonly>
+                        <input type="" name="mail" value="ariel.palazzesi@bue.edu.ar">
                         <i class="mark fa-solid fa-xmark dn" id="emailMark"></i>
                     </div>
                     <p id="emailError" class="error dn">Este correo no es válido.</p>
@@ -73,15 +72,13 @@
 
                     <!-- Enviar -->
                     <div id="btn-field">
-                    <button id="reservarBtn" onclick="reservarBoton()">Reservar</button>
+                    <button type="submit" id="reservarBtn">Reservar</button>
                 </div>
                 </form >
             </div >
         </article >
     </main >
-
-                            <script src="login.js"></script>
-                            <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+                            <script src="validacion-reserva.js"></script>       
 </body>
 
 </html>
