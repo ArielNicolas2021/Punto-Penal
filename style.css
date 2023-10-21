@@ -148,24 +148,29 @@ body {
 
 #bienvenidos>h1 {
     position: absolute;
+    width: 100%;
+    height: 100%;
     color: #220cae;
-    font-size: 1.5em;
-    line-height: 1;
-    margin-top: 100px;    
-    text-align: center;
-    padding: 4.5em;
     z-index: 1;/* Asegura que el texto esté por encima del video */
     animation: fadeInDown;/* referring directly to the animation's @keyframe declaration */
     animation-duration: 2s;/* don't forget to set a duration! */
     font-family: 'Archivo Black', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
 
 }
 
 #bienvenidos>p {
     position: absolute;
-    text-align: center;
-    margin-top: 200px;   
-    padding: 1.5em;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10rem;
+    gap: .5rem;
     font-size: 1em;
     z-index: 1;
 }
@@ -177,28 +182,33 @@ body {
     /* Cambia la dirección del flex a columna */
     gap: 1px;
     /*separacion entre un item y el que le sigue*/
-    width: 100vw;
     border-style: hidden;
     color: var(--color-four);
     padding: 0;
-
 }
 
-.box {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     background-color: rgba(0, 0, 0, 0.5);
-   
+}
+.grid-column {
+    grid-row: 2 / 3;
 }
 
-.nosotros img {
-    width: 50%;   
+.box-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid img {
+    width: 100%;   
 }
 
 .box p {
     text-align: center;
-    margin: 10px;
     font-size: 0.9em;
     height: auto;
 }
@@ -207,7 +217,6 @@ body {
     text-align: center;
     font-size: 1.5em;
     font-family: 'Archivo Black', sans-serif;
-    margin-top: 20px;
 }
 
 .box-mapa {
@@ -219,13 +228,13 @@ body {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-.box-mapa h2 {
+.box-mapa-content h2 {
     margin-top: 10px;
     font-family: 'Archivo Black', sans-serif;
     font-size: 1.5em;
 }
 
-.box-mapa p {
+.box-mapa-content p {
     padding: 10px;
     font-size: 0.9em;
  
@@ -684,49 +693,49 @@ footer {
     /*---------------------------------------------INDEX entre 768 Y 1024PX--------------------------------------------- */
     #bienvenidos>h1 {
         font-size: 2.5em;
-        margin-top: -300px;
-       
-         }
+        width: 100%;
+        height: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
     
-        #bienvenidos>p {
-        margin-top: -200px;
-        margin-left: 7em; 
-                  
-        }
-    
-        .box div h2 {
-        margin-top:20px;
-        font-size: 2em;
-    
-        }
-    
-        .box p {        
-        font-size: 1.3em;
-        margin-bottom: 10px;
-        }
-    
-        .box-mapa {       
+    #bienvenidos p {
+        margin-top: 15rem;
+        height: 0;
+    }
+
+    .box-content p {
+        margin: 0 1rem;
+    }
+
+    .box-mapa {
         font-size: 1.3em;       
-        padding: 30px;
-        }
-    
-        .box-mapa p {
-            font-size: 1em;
-        }
-    
-        .box-mapa iframe {
+    }
+
+    .box-mapa-content h2 {
+        margin: 0;
+    }
+
+    .box-mapa-content p {
+        font-size: .8em;
+        margin: 0;
+    }
+
+    .box-mapa iframe {
         width: 60%;
         max-height: 250px;
-        }
-       
+    }
    
 /* -----------------------------------------------ALQUILER entre 768 Y 1024px---------------------------------*/
     .card {
-        height: 300px;    }
+        height: 300px;
+    }
 
     .pAlquiler {
-            font-size: 30px;   
-       }
+        font-size: 30px;
+    }
   
     /* ------------------------------------------SERVICIOS entre 768 Y 1024px------------------------------- */
 
@@ -824,20 +833,26 @@ footer {
 
 
 /*---------------------------------------------INDEX desde 1025px--------------------------------------------- */
-#bienvenidos>h1 {
-    font-size: 2.5em;
-    margin-top: -300px;
-     }
-
-    #bienvenidos>p {
-    margin-top: -190px;
-    margin-left: 5em; 
-    font-size: 1.2em;          
+    #bienvenidos>h1 {
+        font-size: 4.5vw;
+        height: 56.5vw;
+        gap: 1.5vw;
     }
 
-    .box div h2 {
-    margin-top:30px;
-    font-size: 2em;
+    #bienvenidos>p {
+        font-size: 2vw;
+        height: 56vw;
+        gap: .5vw;
+        margin-top: 10vw;
+    }
+
+    .box-content {
+        font-size: 1.5vw;
+        margin: 0 1vw;
+    }
+
+    .box-content h2 {
+        font-size: 2em;
     }
 
     .box p {
@@ -858,8 +873,8 @@ footer {
     }
 
     .box-mapa iframe {
-    width: 60%;
-    max-height: 350px;
+        width: 60%;
+        height: 350px;
     }
 
 
